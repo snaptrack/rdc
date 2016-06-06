@@ -1,0 +1,166 @@
+block content
+    head
+        link(rel='stylesheet', href="/stylesheets/index.css")       
+        link(rel='stylesheet', href="/stylesheets/lightbox.min.css")
+    
+        title='SnapTrack-HOME'
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+        script(src="/socket.io/socket.io.js")
+        script. 
+            $(document).ready(function(){
+              $("body").append("<script src='/javascripts/websocket.js'>");
+              $(".badge1").attr("data-badge",''+number_notifications);
+            });
+            var array_luoghi= !{luoghi};
+            var array_foto= !{photos};
+            var array_friends= !{friends};
+            var feed= !{feed};
+            var at= '#{at}';
+            var rb= '#{crypted_id}';
+            var asp= '#{asp}';
+            var array_notifiche=!{notifications};
+            var number_notifications='#{number_notifications}';
+            var myname = '#{name}';
+            
+            history.pushState('','Snaptrack-Home','https://rdc-snaptrack.c9users.io/users/FBLogin/confirm');
+        script(src='../../javascripts/maps.js')
+        meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+        meta(charset='utf-8')
+        title Bootply snippet - Google Maps and Bootstrap 3
+        meta(name='generator', content='Bootply')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        meta(name='description', content="Need to explicitly set the height of map canvas, or make all of it's containers 100%")
+        //link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+        //if lt IE 9
+          script(src='//html5shim.googlecode.com/svn/trunk/html5.js')
+        link(rel='apple-touch-icon', href='/bootstrap/img/apple-touch-icon.png')
+        link(rel='apple-touch-icon', sizes='72x72', href='/bootstrap/img/apple-touch-icon-72x72.png')
+        link(rel='apple-touch-icon', sizes='114x114', href='/bootstrap/img/apple-touch-icon-114x114.png')
+        // CSS code from Bootply.com editor
+        style(type='text/css').
+          /* all map containers must be full height */
+          html, body, .container-fluid, .row, .map { height: 100% }
+          #map-canvas {
+          width:100%;
+          height: 100%;
+          height:calc(100% - 0px);
+          }   
+       
+    body
+    .container-fluid
+      .row
+        .col-md-3.col-sm-offset-1
+          h1(id='name' class="brand-heading") #{name}
+                    // /p(id='email') #{email}
+                    // /h6(id='id') #{id}
+                    
+                    hr
+                    div(id='image' )
+                        img(class="img-circle" src= photo)
+                    
+                    br
+                    table
+                        tr
+                            td 
+                                input(type='text' class="form-control" id='place' maxlenght='40' placeholder='search place')
+                            td
+                                button(name='place' class="btn btn-default" onclick='place()').
+                                    search
+                        
+                        tr
+                            td
+                                #zonaDinamica
+                                    button(id='friends' class="btn btn-primary" onclick='friends()').
+                                        search friends
+                                        
+
+                    hr
+                    .raw      
+                          button.btn.btn-default(type='button' id="notificationLink" class="badge1" data-badge="0" data-toggle='modal' data-target='#my666Modal' onclick='badge_notification()') Notifications
+                          //button.btn.btn-default(type='button', data-toggle='modal', data-target='#my2Modal') Mostra Notifiche
+                          #my666Modal.modal.fade(role='dialog')
+                            .modal-dialog.modal-lg
+                              .modal-content
+                                        
+                                        
+                                #notif.modal-body
+                                  
+                                        
+                                .modal-footer
+                                  button.btn.btn-danger(type='button', data-dismiss='modal') Close 
+                    hr
+                    .raw
+                          form(method='post' name='form1' id='fr1' enctype='multipart/form-data' action='https://rdc-snaptrack.c9users.io/users/addplace' onsubmit='return validation();' )
+                              table(id='table')
+                                  tr
+                                      td
+                                          
+                                        h3 Trip
+                                  tr
+                                      td
+                                          //label.control-label Select File
+                                          input(type='file' class="filestyle" data-buttonName="btn-primary" id='imgs' name='img' data-show-preview='false')
+                                          //input(type='file' id='imgs' name='img' multiple)
+                                          
+
+                                  tr
+                                      td
+                                          input(type='text' class="form-control" id='city' name='city' placeholder='Insert city' required)
+                                      td
+                                          input(type='hidden' name='at' value=''+at)
+                                      td
+                                          input(type='hidden' name='asp' value=''+asp)
+                                  tr
+                                      td
+                                          button(type='submit' class="btn btn-default" name='submit' value='New place') New Place
+                    hr
+                    .raw
+                          h3 Api
+                          
+                          button.btn.btn-danger(type='button', data-toggle='modal', data-target='#myModal') Get Token
+                          // Modal
+                          #myModal.modal.fade(role='dialog')
+                            .modal-dialog.modal-lg
+                              // Modal content
+                              .modal-content
+                                
+                                  
+                                        
+                                .modal-body
+                                  pre.pre-scrollable #{token}
+                                  
+                                  //h6 #{token}
+                                  
+                                .modal-footer
+                                  button.btn.btn-danger(type='button', data-dismiss='modal') Close
+                          
+                          button.btn.btn-link(type='button'  ) 
+                            a(href="https://github.com/ggd94/progetto/wiki" target="_blank") Instructions
+                    hr
+                    .raw
+                        table
+                          tr
+                            td
+                              a(href="https://rdc-snaptrack.c9users.io" )
+                                h4 Home 
+                            td
+                                h4 | 
+                            td
+                              h4  SnapTrack
+                            td
+                              a(href="https://rdc-snaptrack.c9users.io" )
+                                img.img-circle(src='/images/rsz_snaptrack.jpg',  alt='.')
+                          // Trigger the modal with a button
+            // /col-6
+          // /row
+        // /col-5
+        .col-md-8.map
+          #googleMap.google-map-canvas        
+        
+        
+                
+                            
+        script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDVlcXoDh6ay1LExyuSdY9GcUDhfiyP5hk&callback=initMap' async defer)                    
+        script(src="../../javascripts/lightbox-plus-jquery.min.js")      
+        script(src="../../javascripts/bootstrap-filestyle.js")                            
+        script(type='text/javascript', src='../../javascripts/bootstrap.min.js')
