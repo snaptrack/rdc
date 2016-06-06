@@ -67,7 +67,7 @@ router.post('/numberNotifications', function(req, res, next) {
                 "Person": {
                     user: persona.Person.user,
                     email: persona.Person.email,
-                    image: persona.Person.user,
+                    image: persona.Person.image,
                     luoghi: persona.Person.luoghi,
                     photos: persona.Person.photos,
                     friends: persona.Person.friends,
@@ -134,7 +134,7 @@ io.on('connection', function(socket) {
                             "Person": {
                                 user: persona.Person.user,
                                 email: persona.Person.email,
-                                image: persona.Person.user,
+                                image: persona.Person.image,
                                 luoghi: persona.Person.luoghi,
                                 photos: persona.Person.photos,
                                 friends: persona.Person.friends,

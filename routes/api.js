@@ -22,7 +22,7 @@ router.get('/photos',function(req,res,next){
         }
         else{
             console.log(error);
-            res.json({});
+            res.json({status:error});
         }
     });
 });
@@ -45,7 +45,7 @@ router.get('/friends',function(req,res,next){
         }
         else{
             console.log(error);
-            res.json({});
+            res.json({status:error});
         }
     });
 });
@@ -68,7 +68,7 @@ router.get('/places',function(req,res,next){
         }
         else{
             console.log(error);
-            res.json({});
+            res.json({status:error});
         }
     });
 });

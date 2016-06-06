@@ -115,40 +115,43 @@ block content
                                           button(type='submit' class="btn btn-default" name='submit' value='New place') New Place
                     hr
                     .raw
-                          h3 Api
-                          
-                          button.btn.btn-danger(type='button', data-toggle='modal', data-target='#myModal') Get Token
-                          // Modal
-                          #myModal.modal.fade(role='dialog')
-                            .modal-dialog.modal-lg
-                              // Modal content
-                              .modal-content
-                                
-                                  
-                                        
-                                .modal-body
-                                  pre.pre-scrollable #{token}
-                                  
-                                  //h6 #{token}
-                                  
-                                .modal-footer
-                                  button.btn.btn-danger(type='button', data-dismiss='modal') Close
-                          
-                          button.btn.btn-link(type='button'  ) 
-                            a(href="https://github.com/ggd94/progetto/wiki" target="_blank") Instructions
+                      
+                              h3 Api
+                              
+                              button.btn.btn-danger(type='button', data-toggle='modal', data-target='#myModal') Get Token
+                              // Modal
+                              #myModal.modal.fade(role='dialog')
+                                .modal-dialog.modal-lg
+                                  // Modal content
+                                  .modal-content
+                                    
+                                      
+                                            
+                                    .modal-body
+                                      pre.pre-scrollable #{token}
+                                      
+                                      //h6 #{token}
+                                      
+                                    .modal-footer
+                                      button.btn.btn-danger(type='button', data-dismiss='modal') Close
+                              
+                              //button.btn.btn-link(type='button'  ) 
+                              
+                              a(target="_tab" href="https://github.com/snaptrack/rdc/wiki" ) 
+                                h6 Instructions
                     hr
                     .raw
                         table
                           tr
                             td
                               a(href="https://rdc-snaptrack.c9users.io" )
-                                h4 Home 
+                                h4 Logout 
                             td
                                 h4 | 
                             td
                               h4  SnapTrack
                             td
-                              a(href="https://rdc-snaptrack.c9users.io" )
+                              a(href="https://rdc-snaptrack.c9users.io/users/FBLogin/confirm" )
                                 img.img-circle(src='/images/rsz_snaptrack.jpg',  alt='.')
                           // Trigger the modal with a button
             // /col-6

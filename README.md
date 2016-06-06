@@ -1,3 +1,9 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+# SnapTrack
+Project for 'Reti di Calcolatori' course.
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+We are four students from LaSapienza
+and we have made this site for an exam project
+we hope you like it.
+
+API's documentation is [here!](https://github.com/snaptrack/rdc/wiki).
+
